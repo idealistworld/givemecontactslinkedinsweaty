@@ -7,23 +7,20 @@
   "action": {
     "default_title": "execute.js will run (watch the Chrome DevTools' console)",
     "default_popup": "popup.html"
-
   },
   "content_scripts": [
     {
-      "run_at" : "document_start",
+      "run_at": "document_start",
       "js": ["before.js"],
       "matches": [
-        "https://*/*",
-        "http://*/*"
+        "https://*.linkedin.com/*"
       ]
     },
     {
-      "run_at" : "document_idle",
+      "run_at": "document_idle",
       "js": ["after.js"],
       "matches": [
-        "https://*/*",
-        "http://*/*"
+        "https://*.linkedin.com/*"
       ]
     }
   ],
@@ -35,7 +32,6 @@
     "scripting"
   ],
   "host_permissions": [
-    "https://*/*",
-    "http://*/*"
+    "https://*.linkedin.com/*"
   ]
 }
